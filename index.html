@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kuba-04</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Prevent FOUC */
+        html {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Custom styles to match the design */
+        body {
+            font-family: 'EB Garamond', serif;
+            line-height: 1.75;
+            font-size: 18px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in forwards;
+        }
+
+        .prose {
+            max-width: 65ch;
+            margin: 0 auto;
+        }
+
+        .article-preview {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .time-to-read {
+            font-style: normal;
+            font-feature-settings: "tnum" on, "lnum" on;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Page transition */
+        a {
+            transition: color 0.3s ease;
+        }
+
+        .page-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                maxWidth: '65ch',
+                                color: '#333',
+                                'h1, h2, h3': {
+                                    fontWeight: '500',
+                                    marginTop: '2em',
+                                    marginBottom: '1em'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Page transition
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    if (this.hostname === window.location.hostname) {
+                        e.preventDefault();
+                        const href = this.getAttribute('href');
+                        document.body.style.opacity = 0;
+                        document.body.style.transform = 'translateY(10px)';
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 300);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body class="bg-white text-gray-900">
+    <div class="page-transition"></div>
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <header class="text-center mb-16 sticky top-0 bg-white">
+            <h1 class="text-4xl font-medium mb-2 italic">kuba-04</h1>
+            <p class="text-gray-600 italic">Software Developer</p>
+        </header>
+
+        <main class="prose">
+
+            <hr class="my-8">
+
+            <dev class="center">
+                <p class="">Currently:
+                <p class="ml-7">
+                    <b>freelance</b> & <b>open source</b>.
+                </p>
+                </p>
+                <p class="">Favorite topics:</p>
+                <p class="ml-7">
+                    <b>rust</b> | <b>nostr</b> | <b>bitcoin</b>
+                </p>
+                <p class="">Freelance tech picks: </p>
+                <p class="ml-7">backend &rarr; <b>java</b><br>mobile &rarr; <b>flutter</b><br>web &rarr; <b>svelte</b>
+                </p>
+                <!-- <p class="italic ml-20">mobile => <b>flutter</b></p>
+                <p class="italic ml-20">web => <b>svelte</b></p> -->
+            </dev>
+
+            <hr class="my-8">
+
+            <!-- My favorite topics: <b>rust</b>, <b>nostr</b> & <b>bitcoin</b>.
+            Freelance tech picks: backend => <b>java</b> | mobile =>
+            <b>flutter</b> | web => <b>svelte</b>
+            </p> -->
+            <br>
+            <header class="mb-10">
+                <h1 class="text-3xl font-medium mb-2">Now working on:</h1>
+            </header>
+
+            <article class="mb-12 ml-7">
+                <h2 class="text-2xl font-medium mb-2">
+                    <a href="./projects/arwords.html" class="hover:text-gray-600">Arwords</a>
+                </h2>
+                <div class="text-sm text-gray-500 mb-2 time-to-read italic">2025 · for Lebanese arabic learners</div>
+                <!-- <p class="article-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+            </article>
+            <article class="mb-12 ml-7">
+                <h2 class="text-2xl font-medium mb-2">
+                    <a href="./projects/bookmarkstr.html" class="hover:text-gray-600">Bookmarkstr</a>
+                </h2>
+                <div class="text-sm text-gray-500 mb-2 time-to-read italic">2025 · for nostr users</div>
+                <!-- <p class="article-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+            </article>
+            <article class="mb-12 ml-7">
+                <h2 class="text-2xl font-medium mb-2">
+                    <a href="./projects/hook-cafe.html" class="hover:text-gray-600">Hook Cafe</a>
+                </h2>
+                <div class="text-sm text-gray-500 mb-2 time-to-read italic">2024 · for all the people out there
+                </div>
+                <!-- <p class="article-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+            </article>
+            <!-- <article class="mb-12">
+                <h2 class="text-2xl font-medium mb-2">
+                    <a href="./projects/share-the-light.html" class="hover:text-gray-600">Share the Light</a>
+                </h2>
+                <div class="text-sm text-gray-500 mb-2 time-to-read ">2023 · for my friend's NGO</div>
+                <p class="article-preview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </article> -->
+
+            <header class="mb-16">
+                <h1 class="text-3xl font-medium mb-2">Experience</h1>
+                <p class="article-preview">For commercial or enterprise projects I've worked on, you can find me on
+                    <a href="https://linkedin.com/in/jakub-gladysz/"
+                        class="hover:text-gray-400 hover:underline">Linkedin</a>.
+                </p>
+            </header>
+
+            <hr class="my-8">
+        </main>
+
+
+        <footer class="mt-16 text-center text-sm text-gray-500">
+            <!-- <nav class="mb-4">
+                <a href="#" class="mx-2 hover:text-gray-900">Posts</a>
+                <a href="#" class="mx-2 hover:text-gray-900">Tags</a>
+                <a href="#" class="mx-2 hover:text-gray-900">About</a>
+            </nav> -->
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="https://nosta.me/npub1mqe4v572yqvlxuhgjh5evp25er3plf8w74zxqe856zsfxpsm52ysgp2fhm"
+                    class="hover:text-gray-900">NOSTR</a>
+                <span>·</span>
+                <a href="https://github.com/kuba-04" class="hover:text-gray-900">Github</a>
+            </div>
+            <p>© 2025 kuba-04</p>
+        </footer>
+    </div>
+</body>
+
+</html>
