@@ -123,15 +123,19 @@
                 <!-- <div class="text-sm text-gray-500 mb-8 time-to-read italic">2023-01-26 · 5 min</div> -->
 
                 <div class="space-y-6">
-                    <a href="https://btrust.tech/" target="_blank"><img src="../assets/btrust.png" alt="Btrust" class="w-1/4"></a>
+                    <a href="https://btrust.tech/" target="_blank"><img src="../assets/btrust.png" alt="Btrust"
+                            class="w-1/4"></a>
                     <p>
-                        <a href="https://btrust.tech/" target="_blank"><b>Btrust</b></a> is a bitcoin academy. I am a proud student of 2025 cohort.
+                        <a href="https://btrust.tech/" target="_blank"><b>Btrust</b></a> is a bitcoin academy. I am a
+                        proud student of 2025 cohort.
                     </p>
 
                     <h2 class="text-2xl font-medium mt-8 ">The Concept</h2>
                     <p class="">
-                        I really wanted to put more time and effort in understanding bitcoin technical concepts, so when it happened to me that got relocated somewhere in global south, 
-                        I couldn't miss the opportunity to be become a part of the latest cohort, I am very grateful for this.
+                        I really wanted to put more time and effort in understanding bitcoin technical concepts, so when
+                        it happened to me that got relocated somewhere in global south,
+                        I couldn't miss the opportunity to be become a part of the latest cohort, I am very grateful for
+                        this.
                     </p>
 
                     <h2 class="text-2xl font-medium mt-8 ">Implementation</h2>
@@ -141,7 +145,8 @@
 
                     <h2 class="text-2xl font-medium mt-8">Result</h2>
                     <p>
-                        At this stage the project is minimal and simple, but it already explains quite a bit, at least I learned a lot on the way. The results are in this
+                        At this stage the project is minimal and simple, but it already explains quite a bit, at least I
+                        learned a lot on the way. The results are in this
                         repo: <a href="https://github.com/kuba-04/rust-capstone-project"
                             target="_blank"><b>capstone_project</b></a>
                         and <a href="https://github.com/kuba-04/rust-week-1-exercises" target="_blank"><b>this
@@ -154,14 +159,18 @@
                     <h3 class="text-xl font-medium mt-6 mb-2">Table of Contents</h3>
                     <ul class="list-disc ml-6 mb-6">
                         <li><a href="#rust-concepts" class="text-gray-500 hover:underline italic">Rust Concepts</li>
-                        <li><a href="#bitcoin-concepts" class="text-gray-500 hover:underline italic">Bitcoin Concepts</a></li>
-                        <li><a href="#code-architecture" class="text-gray-500 hover:underline italic">Code Architecture</a></li>
-                        <li><a href="#implementation-details" class="text-gray-500 hover:underline italic">Implementation Details</a></li>
+                        <li><a href="#bitcoin-concepts" class="text-gray-500 hover:underline italic">Bitcoin
+                                Concepts</a></li>
+                        <li><a href="#code-architecture" class="text-gray-500 hover:underline italic">Code
+                                Architecture</a></li>
+                        <li><a href="#implementation-details"
+                                class="text-gray-500 hover:underline italic">Implementation Details</a></li>
                     </ul>
 
                     <hr>
                     <!-- Rust Concepts -->
-                    <h3 id="rust-concepts" class="text-xl font-medium mt-8 mb-2">Rust Concepts <img src="../assets/rust.png" alt="Rust" class="w-7 inline-block"></h3>
+                    <h3 id="rust-concepts" class="text-xl font-medium mt-8 mb-2">Rust Concepts <img
+                            src="../assets/rust.png" alt="Rust" class="w-7 inline-block"></h3>
 
                     <h4 class="text-lg font-semibold mt-6 mb-1">1. Error Handling</h4>
                     <p>Our code demonstrates Rust's robust error handling through:</p>
@@ -195,7 +204,8 @@
 
                     <hr>
                     <!-- Bitcoin Concepts -->
-                    <h3 id="bitcoin-concepts" class="text-xl font-medium mt-8 mb-2">Bitcoin Concepts <img src="../assets/bitcoin.png" alt="Bitcoin" class="w-12 inline-block"></h3>
+                    <h3 id="bitcoin-concepts" class="text-xl font-medium mt-8 mb-2">Bitcoin Concepts <img
+                            src="../assets/bitcoin.png" alt="Bitcoin" class="w-12 inline-block"></h3>
 
                     <h4 class="text-lg font-semibold mt-6 mb-1">1. Wallet Management</h4>
                     <p>The code implements basic Bitcoin wallet operations:</p>
@@ -237,11 +247,6 @@
                     <h3 id="code-architecture" class="text-xl font-medium mt-8 mb-2">Code Architecture</h3>
 
                     <h4 class="text-lg font-semibold mt-6 mb-1">1. Configuration Management</h4>
-                    <pre class="bg-gray-100 rounded p-3 overflow-x-auto text-sm mb-4"><code>struct Config {
-    rpc_url: String,
-    rpc_user: String,
-    rpc_password: String,
-}</code></pre>
                     <ul class="list-disc ml-6 mb-4">
                         <li>Environment-based configuration</li>
                         <li>Secure credential management</li>
@@ -249,12 +254,6 @@
                     </ul>
 
                     <h4 class="text-lg font-semibold mt-6 mb-1">2. Transaction Details Structure</h4>
-                    <pre class="bg-gray-100 rounded p-3 overflow-x-auto text-sm mb-4"><code>struct TransactionDetails {
-    txid: Txid,
-    miner_input_address: Address,
-    miner_input_amount: f64,
-    // ...
-}</code></pre>
                     <ul class="list-disc ml-6 mb-4">
                         <li>Comprehensive transaction information</li>
                         <li>Input and output tracking</li>
@@ -262,61 +261,6 @@
                         <li>Block confirmation details</li>
                     </ul>
 
-                    <!-- Implementation Details -->
-                    <h3 id="implementation-details" class="text-xl font-medium mt-8 mb-2">Implementation Details</h3>
-
-                    <h4 class="text-lg font-semibold mt-6 mb-1">1. RPC Communication</h4>
-                    <ul class="list-disc ml-6 mb-4">
-                        <li>Uses <a href="https://crates.io/crates/bitcoincore-rpc" target="_blank"><b>bitcoincore-RPC</b></a> crate for Bitcoin Core communication</li>
-                        <li>Implements secure authentication</li>
-                        <li>Handles JSON-RPC protocol</li>
-                    </ul>
-
-                    <h4 class="text-lg font-semibold mt-6 mb-1">2. Wallet Operations</h4>
-                    <pre class="bg-gray-100 rounded p-3 overflow-x-auto text-sm mb-4"><code>fn get_wallet(rpc: &Client, wallet_name: &str) -> bitcoincore_rpc::Result<LoadWalletResult></code></pre>
-                    <ul class="list-disc ml-6 mb-4">
-                        <li>Wallet existence checking</li>
-                        <li>Creation/loading logic</li>
-                        <li>Error handling for wallet operations</li>
-                    </ul>
-
-                    <h4 class="text-lg font-semibold mt-6 mb-1">3. Transaction Processing</h4>
-                    <ul class="list-disc ml-6 mb-4">
-                        <li>Amount validation</li>
-                        <li>Fee calculation</li>
-                        <li>Change address management</li>
-                        <li>Transaction confirmation tracking</li>
-                    </ul>
-
-
-                    <!-- Best Practices Demonstrated -->
-                    <h3 class="text-xl font-medium mt-8 mb-2">Best Practices Demonstrated</h3>
-                    <ol class="list-decimal ml-6 mb-4">
-                        <li><b>Error Handling</b>: Comprehensive error handling with custom error types</li>
-                        <li><b>Documentation</b>: Clear function and struct documentation</li>
-                        <li><b>Modular Design</b>: Separation of concerns between configuration, transaction handling, and wallet management</li>
-                        <li><b>Resource Management</b>: Proper handling of file I/O and network connections</li>
-                    </ol>
-
-                    <!-- Testing and Verification -->
-                    <h3 class="text-xl font-medium mt-8 mb-2">Testing and Verification</h3>
-                    <ul class="list-disc ml-6 mb-4">
-                        <li>Transaction verification</li>
-                        <li>Balance checking</li>
-                        <li>Block confirmation</li>
-                        <li>Result logging to file</li>
-                    </ul>
-
-                    <!-- Getting Started -->
-                    <h3 class="text-xl font-medium mt-8 mb-2">Getting Started</h3>
-                    <ol class="list-decimal ml-6 mb-4">
-                        <li>Ensure Bitcoin Core is running in regtest mode</li>
-                        <li>Set up environment variables for RPC credentials</li>
-                        <li>Run the code to execute the complete transaction scenario</li>
-                        <li>Check the output file for transaction details</li>
-                    </ol>
-
-                    
                 </div>
             </article>
             <hr class="my-8">
